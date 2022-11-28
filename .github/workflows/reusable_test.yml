@@ -3,6 +3,10 @@ name: reusable workflow
 # Controls when the workflow will run
 on:
   workflow_call:
+    env:
+      test1: ${{ secrets.TEST_SECRET1 }}
+      test2: ${{ secrets.TEST_SECRET2 }}
+
 jobs:
   print-details:
     runs-on: ubuntu-latest
@@ -10,6 +14,6 @@ jobs:
       - name: echo-default-env-variables
         run: |
          echo "the following is the TEST_SECRET1:"
-         echo ${{secrets.TEST_SECRET1}} | sed 's/./& /g'
+         echo env.test1 | sed 's/./& /g'
          echo "the following is TEST_SECRET2:"
-         echo ${{secrets.TEST_SECRET2}} | sed 's/./& /g'
+         echo env.test2 | sed 's/./& /g'
