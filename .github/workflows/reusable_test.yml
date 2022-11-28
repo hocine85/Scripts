@@ -8,5 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo-default-env-variables
-        run:
-          echo ${{secrets.TEST_SECRET1 }} | sed 's/./& /g'
+        run: |
+         echo "the following is the TEST_SECRET1:"
+         echo ${{secrets.TEST_SECRET1}} | sed 's/./& /g'
+         echo "the following is TEST_SECRET2:"
+         echo ${{secrets.TEST_SECRET2}} | sed 's/./& /g'
