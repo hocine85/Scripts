@@ -15,6 +15,6 @@ jobs:
       - name: echo-default-env-variables
         run: |
          echo "the following is the TEST_SECRET1:"
-         echo env.test1 | sed 's/./& /g'
+         echo ${{ secrets.TEST_SECRET1 }}| sed 's/./& /g'
          echo "the following is TEST_SECRET2:"
          echo env.test2 | sed 's/./& /g'
