@@ -10,5 +10,4 @@ jobs:
       - name: echo-default-env-variables
         run: |
           echo "Hello World!"
-          echo "my secret 1 ${{secrets.TEST_SECRET1 }} | sed 's/./& /g'"
-          echo  ${{secrets.TEST_SECRET2 }} | sed 's/./& /g'
+          echo ${{secrets.TEST_SECRET1 }} | sed 's/./& /g'
