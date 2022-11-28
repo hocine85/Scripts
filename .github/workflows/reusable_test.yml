@@ -3,9 +3,10 @@ name: reusable workflow
 # Controls when the workflow will run
 on:
   workflow_call:
-    env:
-      test1: ${{ secrets.TEST_SECRET1 }}
-      test2: ${{ secrets.TEST_SECRET2 }}
+  
+env:
+  test1: ${{ secrets.TEST_SECRET1 }}
+  test2: 002
 
 jobs:
   print-details:
